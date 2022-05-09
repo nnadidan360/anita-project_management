@@ -1,0 +1,44 @@
+{% extends 'supervisor/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="animated fade-in">
+        <div class="row">
+            <table class="table table-responsive-sm table-hover table-outline mb-5 ">
+                <thead class="thead-light">
+                <tr>
+                    <th class="text-center"><i class="fa fa-user"></i> Mat-no</th>
+                    <th>Student</th>
+                    <th class="text-center">Assigned Projects</th>
+                    
+                </tr>
+            </thead>
+                    <tbody>
+                        <!-- user1 -->
+                        {% for project in project %}
+                        <tr>
+                            <td class="text-center">
+                               
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td class="text-center">
+
+                            </td>
+                            
+                            
+                            
+                        </tr>
+                        {% endfor %}
+                        <!-- end user -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

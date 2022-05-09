@@ -1,0 +1,144 @@
+{% extends 'student/rebase.html' %}
+{% load static %}
+
+
+{% block breadcrumb %}
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">Projects</li>
+        <li class="breadcrumb-item active">New Project</li>
+{% endblock breadcrumb%}
+
+
+
+
+
+{% block content %}
+<div class="container animated fadeIn">
+    {% if user.is_authenticated %}
+
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="card-group">
+                    <div class="card p-4 mb-5">
+                        <div class="card-body">
+                            {% if created %}
+                              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                                  Congratulations, your topics were submitted successfully
+                                </div>
+                            {% endif %}
+                                {% csrf_token %}
+                                <h1>Projects Topics</h1>
+                                <p class="text-muted">Create your projects here</p>
+
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="col-form-label">Full Name <i></i></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        </div>
+
+                                        {{ form.name }}
+                                        {% if form.name.errors %}
+                                            <ol>
+                                            {% for error in form.name.errors %}
+                                                <li><strong>{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                            </ol>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-form-label">Mat No <i></i></label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        </div>
+
+                                        {{ form.mat_no }}
+                                        {% if form.mat_no.errors %}
+                                            <ol>
+                                            {% for error in form.mat_no.errors %}
+                                                <li><strong>{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                            </ol>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-form-label">Topic 1 <i></i></label>
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                                        </div>
+                                        {{ form.topic_1 }}
+                                        {% if form.topic_1.errors %}
+                                            <ol>
+                                            {% for error in form.topic_1.errors %}
+                                                <li><strong>{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                            </ol>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-form-label">Topic 2 <i></i></label>
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                                        </div>
+                                        {{ form.topic_2 }}
+                                        {% if form.topic_2.errors %}
+                                            <ol>
+                                            {% for error in form.topic_2.errors %}
+                                                <li><strong>{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                            </ol>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Topic 3 <i></i></label>
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                                        </div>
+                                        {{ form.topic_3 }}
+                                        {% if form.topic_3.errors %}
+                                            <ol>
+                                            {% for error in form.topic_3.errors %}
+                                                <li><strong>{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                            </ol>
+                                        {% endif %}
+                                    </div>
+                                    <p class="text-danger"> Please note: Students are not allowed to Submit Project Topics more than once</p>
+                                    <p class="text-danger"> Failure to adhere to this will result to Strict desciplinary actions.</p>
+                                </div>
+                                
+
+                                <div class="">
+                                    <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                                </div>
+                            </form>
+                            {{ form.errors }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
