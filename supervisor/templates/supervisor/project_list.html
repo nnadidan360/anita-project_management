@@ -1,0 +1,53 @@
+{% extends 'supervisor/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="animated fade-in">
+        <div class="row">
+            <table class="table table-responsive-sm table-hover table-outline mb-4 ">
+                <thead class="thead-light">
+                <tr>
+                    <th>S/N</th>
+                    <th class="text-center">Topic No 1</th>
+                    <th class="text-center">Topic No 2</th>
+                    <th class="text-center">Topic No 3</th>
+
+                </tr>
+            </thead>
+                    <tbody>
+
+
+                        <tr>
+                            <td>
+                               1
+                            </td>
+                           
+                            <td class="text-center">
+
+                                {{ ProjectList.topic_1}}
+                                
+                            </td>
+                            <td class="text-center">
+                                {{ ProjectList.topic_2}}
+                                                                
+                                
+                            </td>
+                            <td class="text-center">
+                                {{ ProjectList.topic_3}}
+
+                                
+                            </td>
+                           
+                        </tr>
+                        
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

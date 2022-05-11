@@ -1,0 +1,62 @@
+{% extends 'supervisor/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="animated fade-in">
+        <div class="row">
+            <table class="table table-responsive-sm table-hover table-outline mb-4 ">
+                <thead class="thead-light">
+                <tr>
+                    <th class="text-center">Supervisor</th>
+                    <th class="text-center">Assigned Projects</th>
+                    
+                </tr>
+            </thead>
+                    <tbody>
+                        <!-- user1 -->
+                        {% for Supervisor  in allcontent %}
+
+
+
+
+
+                        <tr>
+                           
+                            <td class="text-center">
+
+                                {{Supervisor.supervisor}}
+
+                                
+                                <!-- {% if Assign.user.get_full_name %}
+                                <div>{{ user1.user.get_full_name }}{% if user1.user.is_staff %} <span class="badge badge-pill badge-dark"> staff</span> {% endif %}</div>
+                                {% else %}
+                                <div>{{ user1.user.username }}{% if user1.user.is_staff %} <span class="badge badge-pill badge-dark"> staff</span> {% endif %}</div>
+                                {% endif %}
+                                <div class="small text-muted">
+                                <span>Joined:</span> | {{ user1.user.date_joined }}
+                                </div> -->
+                            </td>
+                            <td class="text-center">
+
+                                Topic No
+                                {{Supervisor.chosen_topic}}
+
+                                
+                                {% endfor %}
+                                
+                            </td>
+                           
+                        </tr>
+                                
+                        
+                        <!-- end user -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
